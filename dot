@@ -1,0 +1,6 @@
+#!/bin/sh
+
+git clone --recurse-submodules https://github.com/ryan3r/dotfiles.git
+cd dotfiles
+chmod +x link
+./link
