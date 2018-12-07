@@ -5,17 +5,17 @@
 	<head>
 		<title>Under construction</title>
 		<meta name="viewport" content="width=device-width"/>
+		<link rel="stylesheet" href="assets/css/style.css"/>
 	</head>
 	<body>
 		<h1>Site under construction</h1>
-		<ul>
+		<div class="projects">
 			{% for project in site.projects %}
-				<li>
+				<a href="{{project.link}}" class="project">
 					<h2>{{project.title}}</h2>
-					<p>{{project.content | markdownify}}</p>
-				</li>
+					{{project.content | markdownify}}
+				</a>
 			{% endfor %}
-		</ul>
+		</div>
 	</body>
 </html>
-
