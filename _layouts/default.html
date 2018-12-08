@@ -1,0 +1,23 @@
+---
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>{{page.title}}</title>
+		<meta name="viewport" content="width=device-width"/>
+		<link rel="stylesheet" href="assets/css/style.css"/>
+	</head>
+	<body>
+        <nav>
+            <ul>
+                {% for link in site.data.nav %}
+                    <li>
+                        <a href="{{link.link}}">{{link.title}}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </nav>
+		<h1>Site under construction</h1>
+		{{content}}
+	</body>
+</html>
