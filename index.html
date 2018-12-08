@@ -9,8 +9,14 @@ title: Projects
 			{% endif %}
 			<div class="project-description">
 				<h2>{{project.title}}</h2>
+				<div class="tags">
+					{% for tag in project.tags %}
+						<span class="tag">{{tag}}</span>
+					{% endfor %}
+				</div>
 				{{project.content | markdownify}}
 			</div>
 		</div>
 	{% endfor %}
 </div>
+<script src="assets/js/index.js"></script>
