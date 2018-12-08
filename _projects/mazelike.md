@@ -1,5 +1,7 @@
 ---
 title: Mazelike
 link: https://mazelike.ryan3r.com
+thumbnail: assets/images/mazelike-small.png
+img: assets/images/mazelike.png
 ---
 A dungeon crawling browser game.
