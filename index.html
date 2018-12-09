@@ -5,7 +5,7 @@ title: Projects
 	{% for project in site.projects %}
 		<div class="project{% if project.thumbnail %} project-wide{% endif %}">
 			{% if project.thumbnail %}
-				<img class="project-picture" src="{{project.thumbnail}}" alt="{{project.title}}" width="500" height="281"/>
+				<img class="project-picture" src="{{project.thumbnail}}" alt="{{project.title}}"/>
 			{% endif %}
 			<div class="project-description">
 				<h2>{{project.title}}</h2>

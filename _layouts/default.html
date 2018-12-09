@@ -18,7 +18,12 @@
                 {% endfor %}
             </ul>
         </nav>
-		<h1>Site under construction</h1>
-		{{content}}
+        <noscript>
+            <div class="alert error">
+                This site relies on javascript some of the features of this site may not be available without it.
+            </div>
+        </noscript>
+		<div class="alert info">Site under construction</div>
+        {{content}}
 	</body>
 </html>
