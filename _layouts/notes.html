@@ -1,0 +1,15 @@
+---
+layout: default
+---
+<div class="outer">
+    <div class="sidebar">
+        {% for note in site.notes %}
+            <li class="note-list-item">
+                <a href="{{note.url}}" class="note-list-title">{{note.title}}</a>
+            </li>
+        {% endfor %}
+    </div>
+    <div class="content">
+        {{content}}
+    </div>
+</div>

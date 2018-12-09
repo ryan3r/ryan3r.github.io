@@ -8,3 +8,8 @@ defaults:
       path: ""
     values:
       layout: "default"
+  - scope:
+      path: ""
+      type: "notes"
+    values:
+      layout: "notes"

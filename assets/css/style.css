@@ -1,5 +1,6 @@
 body {
     background: #eee;
+    margin: 0px;
     margin-top: 60px;
 }
 
@@ -59,6 +60,7 @@ a:hover {
 
 .tag {
     background: #0f0;
+    color: #000;
     border-radius: 10px;
     padding: 3px 7px;
 }
@@ -149,9 +151,26 @@ footer a {
 
 .note-list-title {
     flex-grow: 1;
-}
-
-.note-list a {
     text-decoration: none !important;
     color: inherit;
+}
+
+/* Sidebar layout */
+.outer {
+    display: flex;
+}
+
+.sidebar {
+    width: 350px;
+}
+
+.content {
+    flex-grow: 1;
+    padding: 0px 10px;
+}
+
+@media all and (max-width: 900px) {
+    .sidebar {
+        display: none;
+    }
 }
