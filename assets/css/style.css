@@ -1,3 +1,9 @@
+body {
+    background: #eee;
+    margin-top: 60px;
+}
+
+/* Projects page */
 .projects {
     display: flex;
     flex-wrap: wrap;
@@ -30,10 +36,6 @@
     padding: 3px 7px;
 }
 
-body {
-    background: #eee;
-}
-
 @media all and (max-width: 900px) {
     .project {
         flex-direction: column;
@@ -44,4 +46,44 @@ body {
     .projects {
         justify-content: center;
     }
+}
+
+/* Nav bar */
+nav {
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 50px;
+    background: #f80;
+    color: #fff;
+    position: fixed;
+}
+
+nav ul {
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+}
+
+nav li {
+    display: flex;
+    align-items: center;
+    padding-top: 5px;
+    height: calc(100% - 5px);
+    padding: 0px 7px;
+}
+
+nav li:hover {
+    border-bottom: 5px solid #eee;
+    background: #f91;
+}
+
+nav li.active {
+    border-bottom: 5px solid #fff;
+}
+
+nav a {
+    color: inherit;
+    text-decoration: none;
 }

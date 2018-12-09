@@ -5,13 +5,14 @@
 	<head>
 		<title>{{page.title}}</title>
 		<meta name="viewport" content="width=device-width"/>
-		<link rel="stylesheet" href="assets/css/style.css"/>
+        <meta name="theme-color" content="#f80"/>
+        <link rel="stylesheet" href="assets/css/style.css"/>
 	</head>
 	<body>
         <nav>
             <ul>
                 {% for link in site.data.nav %}
-                    <li>
+                    <li{% if page.url == link.link %} class="active"{% endif %}>
                         <a href="{{link.link}}">{{link.title}}</a>
                     </li>
                 {% endfor %}
