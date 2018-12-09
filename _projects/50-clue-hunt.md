@@ -1,5 +1,5 @@
 ---
-title: Hunt
+title: Clue hunt
 tags:
     - nodejs
     - web
