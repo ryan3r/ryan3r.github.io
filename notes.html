@@ -1,0 +1,15 @@
+---
+title: Notes
+---
+<ul class="note-list">
+    {% for note in site.notes %}
+        <li class="note-list-item">
+            <a href="{{note.url}}" class="note-list-title">{{note.title}}</a>
+            <div class="tags">
+                {% for tag in note.tags %}
+                    <a href="/note-tags.html#{{tag}}" class="tag">{{tag}}</a>
+                {% endfor %}
+            </div>
+        </li>
+    {% endfor %}
+</ul>

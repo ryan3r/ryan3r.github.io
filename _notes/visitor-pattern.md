@@ -1,4 +1,6 @@
 ---
+tags: 
+    - Algorithm
 ---
 # Problem
 If you have a large number of classes that need to be able to add a large number of operations to you have to modifiy all of the classes everytime you add a new operation.

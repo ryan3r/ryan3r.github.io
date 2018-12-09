@@ -132,3 +132,26 @@ footer {
 footer a {
     color: #555;
 }
+
+/* Note styles */
+.note-list {
+    padding: 0px;
+}
+
+.note-list-item {
+    display: flex;
+    padding: 7px 5px;
+}
+
+.note-list-item:hover {
+    background: #ccc;
+}
+
+.note-list-title {
+    flex-grow: 1;
+}
+
+.note-list a {
+    text-decoration: none !important;
+    color: inherit;
+}
