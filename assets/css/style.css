@@ -12,6 +12,10 @@ a:hover {
     text-decoration: underline;
 }
 
+.align-right {
+    text-align: right;
+}
+
 /* Alert styles */
 .alert {
     padding: 10px;
@@ -216,4 +220,13 @@ footer a {
     .sidebar-btn {
         display: block;
     }
+}
+
+/* Edit on github links */
+a.edit {
+    display: none;
+}
+
+.editor a.edit {
+    display: inline;
 }
