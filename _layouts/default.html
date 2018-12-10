@@ -6,10 +6,15 @@
 		<title>{{page.title}}</title>
 		<meta name="viewport" content="width=device-width"/>
         <meta name="theme-color" content="#f80"/>
-        <link rel="stylesheet" href="assets/css/style.css"/>
+        <link rel="stylesheet" href="/assets/css/style.css"/>
 	</head>
 	<body>
         <nav>
+            {% if page.layout == "notes" %}
+                <div class="sidebar-btn">
+                    <img class="menu-icon" src="/assets/images/icons8-menu.svg" alt="Sidebar menu"/>
+                </div>
+            {% endif %}
             <ul>
                 {% for link in site.data.nav %}
                     <li{% if page.url == link.link %} class="active"{% endif %}>
@@ -25,5 +30,6 @@
         </noscript>
 		<div class="alert info">Site under construction</div>
         {{content}}
+        <script src="/assets/js/index.js"></script>
 	</body>
 </html>

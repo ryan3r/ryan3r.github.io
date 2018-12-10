@@ -91,6 +91,9 @@ nav {
     color: #fff;
     position: fixed;
     box-shadow: 0px 0px 5px #000;
+    z-index: 3;
+    display: flex;
+    align-items: center;
 }
 
 nav ul {
@@ -161,7 +164,17 @@ footer a {
 }
 
 .sidebar {
-    width: 350px;
+    width: 300px;
+}
+
+.menu-icon {
+    padding: 7px;
+    margin: 5px;
+    border-radius: 50%;
+}
+
+.menu-icon:hover {
+    background: #f91;
 }
 
 .content {
@@ -169,8 +182,38 @@ footer a {
     padding: 0px 10px;
 }
 
+.sidebar-btn {
+    display: none;
+}
+
 @media all and (max-width: 900px) {
     .sidebar {
-        display: none;
+        top: 50px;
+        left: -305px;
+        height: 100%;
+        position: fixed;
+        background: #eee;
+        box-shadow: 0px 0px 5px #000;
+        z-index: 2;
+        transition: left 300ms;
+    }
+
+    .open .sidebar {
+        left: 0px;
+    }
+
+    .open .shadow {
+        top: 0px;
+        left: 0px;
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        background: #000;
+        opacity: 0.3;
+        z-index: 1;
+    }
+
+    .sidebar-btn {
+        display: block;
     }
 }

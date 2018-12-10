@@ -22,4 +22,21 @@
             style.color = "#fff";
         }
     }
+
+    // Sidebar toggle button
+    let btns = document.getElementsByClassName("sidebar-btn");
+
+    for(var i = 0; i < btns.length; ++i) {
+        btns[i].addEventListener("click", function () {
+            document.body.classList.toggle("open");
+        });
+    }
+
+    let shadow = document.getElementsByClassName("shadow");
+
+    for(var i = 0; i < btns.length; ++i) {
+        shadow[i].addEventListener("click", function () {
+            document.body.classList.toggle("open");
+        });
+    }
 }());
