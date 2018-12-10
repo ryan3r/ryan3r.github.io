@@ -23,13 +23,15 @@
                 {% endfor %}
             </ul>
         </nav>
-        <noscript>
-            <div class="alert error">
-                This site relies on javascript some of the features of this site may not be available without it.
-            </div>
-        </noscript>
-		<div class="alert info">Site under construction</div>
-        {{content}}
+        <div class="wrapper">
+            <noscript>
+                <div class="alert error">
+                    This site relies on javascript some of the features of this site may not be available without it.
+                </div>
+            </noscript>
+            <div class="alert info">Site under construction</div>
+            {{content}}
+        </div>
         <script src="/assets/js/index.js"></script>
 	</body>
 </html>

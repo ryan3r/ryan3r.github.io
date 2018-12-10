@@ -1,7 +1,16 @@
+html {
+    height: 100%;
+}
+
 body {
     background: #eee;
     margin: 0px;
     margin-top: 60px;
+    height: calc(100% - 60px);
+}
+
+.wrapper {
+    min-height: calc(100% - 3em - 20px);
 }
 
 a {
@@ -136,6 +145,7 @@ nav a:hover {
 footer {
     color: #555;
     text-align: center;
+    margin-bottom: 20px;
 }
 
 footer a {
@@ -225,6 +235,7 @@ footer a {
 /* Edit on github links */
 a.edit {
     display: none;
+    color: #777;
 }
 
 .editor a.edit {
