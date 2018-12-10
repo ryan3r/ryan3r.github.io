@@ -1,0 +1,10 @@
+---
+---
+<ul class="note-list">
+    {% for note in site.notes %}
+        <li class="note-list-item{% for tag in note.tags %} tag-{{tag}}{% endfor %}" style="display: none;">
+            <a href="{{note.url}}" class="note-list-title">{{note.title}}</a>
+        </li>
+    {% endfor %}
+</ul>
+<script src="/assets/js/tag-show.js"></script>
