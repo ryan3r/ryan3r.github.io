@@ -44,27 +44,4 @@
     if(window.localStorage && window.localStorage.showEditLinks) {
         document.body.classList.add("editor");
     }
-
-    // Make the footer
-    let footer = document.createElement("footer");
-    document.body.appendChild(footer);
-
-    if(window.localStorage) {
-        let editLink = document.createElement("a");
-        editLink.href = "#";
-        editLink.innerText = window.localStorage.showEditLinks ? "Disable editing" : "Enable editing";
-        footer.appendChild(editLink);
-
-        editLink.addEventListener("click", function(e) {
-            e.preventDefault();
-            if(window.localStorage.showEditLinks) {
-                window.localStorage.removeItem("showEditLinks");
-            } else {
-                window.localStorage.showEditLinks = "yes";
-            }
-
-            document.body.classList.toggle("editor");
-            editLink.innerText = window.localStorage.showEditLinks ? "Disable editing" : "Enable editing";
-        });
-    }
 }());
