@@ -1,17 +1,19 @@
-#!/bin/sh
+#!/bin/bash
 
 depend() {
     which $1 >/dev/null
     if [ $? -eq 1 ]; then
-        if [ "$EUID" = "0" ]; then
+        if [ $EUID -eq 0 ]; then
             which apt >/dev/null
             if [ $? -eq 0 ]; then
                 apt install -y $1
             else
                 echo "Please install $1"
+                exit 1
             fi
         else
             echo "Please install $1 or rerun this script as root"
+            exit 1
         fi
     fi
 }
