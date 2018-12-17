@@ -6,7 +6,11 @@ depend() {
         if [ $EUID -eq 0 ]; then
             which apt >/dev/null
             if [ $? -eq 0 ]; then
+                apt update
                 apt install -y $1
+                if [ $? -ne 0 ]; then
+                    echo "Please install $1"
+                fi
             else
                 echo "Please install $1"
                 exit 1
@@ -19,13 +23,13 @@ depend() {
 }
 
 depend git
-depend vim
-depend tmux
 
 cd ~
-git clone https://github.com/ryan3r/dotfiles.git
+
+if [ ! -d dotfiles ]; then
+    git clone https://github.com/ryan3r/dotfiles.git
+fi
+
 cd dotfiles
-git submodule init
-git submodule update
-chmod +x link
-tmux new -d \; send-keys "cd ~/dotfiles; ./link" Enter \; attach
+chmod +x update
+./update
