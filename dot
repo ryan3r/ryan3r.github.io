@@ -1,35 +1,20 @@
 #!/bin/bash
 
-depend() {
-    which $1 >/dev/null
-    if [ $? -eq 1 ]; then
-        if [ $EUID -eq 0 ]; then
-            which apt >/dev/null
-            if [ $? -eq 0 ]; then
-                apt update
-                apt install -y $1
-                if [ $? -ne 0 ]; then
-                    echo "Please install $1"
-                fi
-            else
-                echo "Please install $1"
-                exit 1
-            fi
-        else
-            echo "Please install $1 or rerun this script as root"
-            exit 1
-        fi
-    fi
-}
-
-depend git
+# Check for git
+which git >/dev/null
+if [ $? -eq 1 ]; then
+    echo Please install git
+    exit 1
+fi
 
 cd ~
 
+# Get the dotfiles
 if [ ! -d dotfiles ]; then
     git clone https://github.com/ryan3r/dotfiles.git
 fi
 
+# Update/Install the dot files
 cd dotfiles
 chmod +x update
-./update
+exec ./update
