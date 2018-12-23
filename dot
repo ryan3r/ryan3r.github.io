@@ -1,5 +1,6 @@
 #!/bin/bash
 
+ERROR_COLOR="\033[1;31m"
 # Determine which package manager this system uses
 package_manager() {
     for manager in "apt-get"; do
@@ -13,11 +14,11 @@ package_manager() {
 
 # Print a command and then run it
 print_run() {
-    echo -e ">> $1"
+    echo -e "\033[0;0m>> $1$ERROR_COLOR"
     eval "$1 >/dev/null"
 }
 
-echo "[0/?] Clone dotfiles"
+echo -e "\033[0;36m[0/?] Cloning dotfiles\033[0;0m"
 
 # Check for git
 which git >/dev/null
@@ -54,4 +55,7 @@ fi
 # Update/Install the dot files
 cd dotfiles
 chmod +x update
+
+# Reset default colors
+echo -ne "\033[0;0m"
 exec ./update
