@@ -45,6 +45,10 @@ cd ~
 # Get the dotfiles
 if [ ! -d dotfiles ]; then
     print_run "git clone https://github.com/ryan3r/dotfiles.git"
+
+    if [ $SUDO_USER ]; then
+        print_run "chown -R $SUDO_USER:$(id -gn $SUDO_USER) ~/dotfiles"
+    fi
 fi
 
 # Update/Install the dot files
