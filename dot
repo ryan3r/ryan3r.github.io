@@ -54,8 +54,8 @@ fi
 
 # Update/Install the dot files
 cd dotfiles
-chmod +x update
+chmod +x ./bin/update-dotfiles
 
 # Reset default colors
 echo -ne "\033[0;0m"
-exec ./update
+exec ./bin/update-dotfiles
