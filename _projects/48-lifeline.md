@@ -4,6 +4,7 @@ thumbnail: assets/images/lifeline.png
 tags:
     - firebase
     - react
+status: Online
 ---
 A basic outlining/task management web app.
 

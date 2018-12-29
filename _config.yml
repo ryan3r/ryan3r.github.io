@@ -1,5 +1,6 @@
 collections:
   projects:
+    output: true
   notes:
     output: true
 
@@ -13,3 +14,8 @@ defaults:
       type: "notes"
     values:
       layout: "notes"
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project-status"

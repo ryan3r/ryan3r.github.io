@@ -5,6 +5,7 @@ tags:
     - class project
     - C/C++
     - ncurses
+status: N/A
 ---
 A rogue like ncurses game.
 

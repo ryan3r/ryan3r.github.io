@@ -5,6 +5,7 @@ tags:
     - class project
     - nodejs
     - web
+status: Online
 ---
 A dungeon crawling browser game.
 

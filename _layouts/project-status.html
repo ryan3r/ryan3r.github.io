@@ -1,0 +1,23 @@
+---
+---
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{page.title}} is {{page.status}}</title>
+        <meta name="viewport" content="width=device-width"/>
+        <link rel="stylesheet" href="/assets/css/status.css"/>
+    </head>
+    <body>
+        <div class="content">
+            <h1>
+                <div class="circle{% if page.status == 'Online' %} online{% endif %}{% if page.status == 'Offline' %} offline{% endif %}"></div>
+                <div class="title">{{page.title}} is currently {{page.status}}</div>
+            </h1>
+            {% if page.status_reason %}
+                <p>
+                    {{page.status_reason}}
+                </p>
+            {% endif %}
+        </div>
+    </body>
+</html>
