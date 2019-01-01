@@ -1,3 +1,4 @@
+/*{{{*/
 html {
     height: 100%;
 }
@@ -23,8 +24,8 @@ a:hover {
 .align-right {
     text-align: right;
 }
-
-/* Alert styles */
+/*}}}*/
+/* Alert styles {{{*/
 .alert {
     padding: 10px;
     margin: 5px;
@@ -42,12 +43,13 @@ a:hover {
     color: #fff;
     box-shadow: 0px 0px 3px #08f;
 }
-
-/* Projects page */
+/*}}}*/
+/* Projects page {{{*/
 .projects {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-evenly;
+	flex-direction: column;
+	align-items: center;
 }
 
 .project {
@@ -92,8 +94,8 @@ a:hover {
         width: 100%;
     }
 }
-
-/* Nav bar */
+/*}}}*/
+/* Nav bar {{{*/
 nav {
     height: 50px;
     background: #f80;
@@ -136,8 +138,8 @@ nav a {
 nav a:hover {
     text-decoration: none;
 }
-
-/* Subtle footer */
+/*}}}*/
+/* Subtle footer {{{*/
 footer {
     color: #555;
     text-align: center;
@@ -147,8 +149,8 @@ footer {
 footer a {
     color: #555;
 }
-
-/* Note styles */
+/*}}}*/
+/* Note styles {{{*/
 .note-list {
     padding: 0px;
 }
@@ -167,8 +169,8 @@ footer a {
     text-decoration: none !important;
     color: inherit;
 }
-
-/* Sidebar layout */
+/*}}}*/
+/* Sidebar layout {{{*/
 .outer {
     display: flex;
 }
@@ -227,8 +229,8 @@ footer a {
         display: block;
     }
 }
-
-/* Edit on github links */
+/*}}}*/
+/* Edit on github links {{{*/
 a.edit {
     display: none;
     color: #777;
@@ -237,3 +239,4 @@ a.edit {
 .editor a.edit {
     display: inline;
 }
+/*}}}*/
