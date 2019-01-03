@@ -3,7 +3,10 @@
 echo -e "\033[0;32m[0/-] Cloning dotfiles\033[0;0m"
 
 # Check for git
-command -v git >/dev/null || (echo "Please install git" && exit 1)
+command -v git >/dev/null || {
+	echo "Please install git"
+	exit 1
+}
 
 cd ~
 
