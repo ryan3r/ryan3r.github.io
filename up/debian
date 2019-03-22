@@ -1,0 +1,76 @@
+#!/bin/bash
+set -e
+
+debian_install() {
+	# Install tools required to add the repos and keys
+	apt install -y \
+		apt-transport-https \
+		software-properties-common \
+		dirmngr
+
+	# Add the vscode key and repo
+	wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+	install -o root -g root -m 644 microsoft.gpg /etc/apt/trusted.gpg.d/
+	echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list
+	rm microsoft.gpg
+	# Add the java repo and key
+	add-apt-repository -y ppa:webupd8team/java
+	apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys C2518248EEA14886
+	# Add the google chrome repo and key
+	wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
+	echo 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' | tee /etc/apt/sources.list.d/google-chrome.list
+
+	apt update
+
+	apt install -y \
+		gcc \
+		g++ \
+		make \
+		automake \
+		htop \
+		tmux \
+		git \
+		neovim \
+		awesome \
+		xorg \
+		acpi \
+		lightdm \
+		firefox-esr \
+		ntfs-3g \
+		pulseaudio-utils \
+		alsa-utils \
+		pulseaudio \
+		mpv \
+		snapd \
+		gnome-terminal \
+		fonts-firacode \
+		dconf-cli \
+		code \
+		network-manager \
+		progress \
+		oracle-java8-installer \
+		google-chrome-stable \
+		curl
+
+	# Install docker
+	curl -sSL https://get.docker.com/ | bash
+
+	# Install slack
+	snap install slack --classic
+
+	# Install discord
+	wget "https://discordapp.com/api/download?platform=linux&format=deb" -O discord.deb
+	apt install -y ./discord.deb
+	rm discord.deb
+
+	# Create a ryan user
+	adduser --gecos "" ryan
+	usermod -aG sudo ryan
+	usermod -aG docker ryan
+
+	su ryan -c 'curl -sSL https://ryan3r.com/dot | bash'
+
+	systemctl start lightdm
+}
+
+debian_install
